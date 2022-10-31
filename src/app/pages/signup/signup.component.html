@@ -1,0 +1,84 @@
+
+<div class="container"  >
+    <div class="row">
+        <div class="col-md-5 offset-md-3"  >
+            <div class="card">
+                <div class="text-center" style="background-color: #f5f5f5;" >
+                    <img widht="120px" height="80px" src="../../../assets/logo.png"/>
+                    <h2 >Register yourself !!!</h2>
+                </div>
+                <div class="modal-body">
+                 
+                <form [formGroup]="signupForm">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">First Name</label>
+                            <input formControlName="firstName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your first name">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Last Name</label>
+                            <input formControlName="lastName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your last name">
+                          </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Username</label> <span class="mandatory">*</span> 
+                            <input formControlName="userName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your  username">
+                            <span 
+                            class="error-msg"
+                            *ngIf="
+                            signupForm.get('userName').invalid &&
+                            signupForm.get('userName').touched
+                            "
+                            >This field is required</span
+                          >
+                           
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Mobile Number</label>
+                            <input formControlName="phone" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your mobile number">
+                            <span
+                            class="error-msg"
+                            *ngIf="
+                            signupForm.get('phone').invalid &&
+                            signupForm.get('phone').touched
+                            "
+                            >Please Enter Correct Phone Number</span
+                          >
+                          </div>
+                      <label for="exampleInputEmail1">Email address</label> <span class="mandatory">*</span> 
+                      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <span
+                      class="error-msg"
+                      *ngIf="
+                      signupForm.get('email').invalid &&
+                      signupForm.get('email').touched
+                      "
+                      >Please Enter Valid Email </span
+                    >
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label> <span class="mandatory">*</span> 
+                      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <span
+                            class="error-msg"
+                            *ngIf="
+                            signupForm.get('password').invalid &&
+                            signupForm.get('password').touched
+                            "
+                            >This field is required</span
+                          >
+                    </div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary" (click)="signup()" [disabled]="signupForm.invalid">Signup</button>
+                    &nbsp;&nbsp;    <button mat-raised-button color="accent" (click)="resetForm()">Clear</button>
+                    <a  routerLink="/login"><h3>Already Register ? Click to login !!!</h3></a>
+                  </div>
+                  </form>
+                    
+               
+                
+                  </div> 
+               
+            </div>
+        </div>
+    </div>
+</div>
