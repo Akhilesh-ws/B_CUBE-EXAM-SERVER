@@ -12,12 +12,12 @@ export class LoginserviceService {
 
   
   loginUser(payloadData){
-    const link=`${this.serverContext}/genToken`;
+    const link=`${this.serverContext}/signin`;
     return this.http.post<any>(link,payloadData)
 
   }
-  public login(token){
-    localStorage.setItem('token',token);
+  public login(accessToken){
+    localStorage.setItem('token',accessToken);
     return true;
 
   }

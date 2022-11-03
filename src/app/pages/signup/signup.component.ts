@@ -25,12 +25,11 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.signupForm=this.fb.group({
-      firstName:[''],
-      lastName:[''],
-      userName:['',Validators.required],
+    
+      username:['',Validators.required],
       email:['',[Validators.pattern(this.email)]],
       password:['',Validators.required],
-      phone:['', [Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),Validators.maxLength(10)]]
+      //phone:['', [Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),Validators.maxLength(10)]]
     })
   
   }
@@ -39,7 +38,7 @@ export class SignupComponent implements OnInit {
   }
   signup(){
     console.log("loading data  :"+JSON.stringify(this.signupForm.value));
-    if(this.signupForm.value.userName== '' || this.signupForm.value.userName==null){
+    if(this.signupForm.value.username== '' || this.signupForm.value.username==null){
       alert("Enter username")
       return;
       
@@ -48,7 +47,7 @@ export class SignupComponent implements OnInit {
    this.engageService.signupUser(this.signupForm.value).subscribe(
     (response) => {
  
-      Swal.fire('Succeessfully  done !!','username :'+this.signupForm.value.userName,'success')
+      Swal.fire('Succeessfully  done !!','username :'+this.signupForm.value.username,'success')
       this.resetSignupForm();
       console.log(response);
     },
@@ -60,12 +59,12 @@ export class SignupComponent implements OnInit {
 }
   resetSignupForm() {
     this.signupForm.setValue({
-      firstName:'',
-      lastName:'',
-      userName:'',
+      
+     
+      username:'',
       email:'',
       password:'',
-      phone:'',
+     
   });
 
 }}

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverContext: 'http://localhost:8080'
+  serverContext: 'http://localhost:9090/api/auth'
 };
 
 /*

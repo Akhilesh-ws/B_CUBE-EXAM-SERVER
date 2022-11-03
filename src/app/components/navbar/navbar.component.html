@@ -4,11 +4,30 @@
     </a>
    <span>Exam Portal</span>
    <span class="example-spacer"></span>
-   <a [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-     Log in
+ <div class="container">
+  <div>
+  <a [routerLink]="'/admin'" class="ml-auto" *ngIf="showAdminBoard" class="example-icon" aria-label="Example icon-button with menu icon">
+    <span> Admin Pannel</span></a>
+    <a [routerLink]="'/mod'"  *ngIf="showModeratorBoard" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <span>Moderator Pannel</span> </a>
+  <a [routerLink]="'/user'"  *ngIf="isLoggedIn" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" >
+    <span>User Pannel</span> </a>
+  </div>
+ 
+<div  *ngIf="!isLoggedIn">
+   <a [routerLink]="'/login'"  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <span> Log in</span> 
    </a>
    &nbsp;&nbsp;
    <a [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-  Register
+  <span> Register</span> 
    </a>
+  </div>
+  <div *ngIf="isLoggedIn">
+  <a [routerLink]="'/profile'" mat-icon-button class="example-icon" >
+    <span> {{ username }}</span> </a> &nbsp;&nbsp;
+    <a  mat-icon-button class="example-icon"  (click)="logout()">
+    <span> Logout</span></a>
+</div>
+</div>
  </mat-toolbar>

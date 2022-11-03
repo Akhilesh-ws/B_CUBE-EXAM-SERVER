@@ -11,39 +11,22 @@
                  
                 <form [formGroup]="signupForm">
                     <div class="form-group">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">First Name</label>
-                            <input formControlName="firstName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your first name">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Last Name</label>
-                            <input formControlName="lastName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your last name">
-                          </div>
+                        
+                        
                         <div class="form-group">
                             <label for="exampleInputPassword1">Username</label> <span class="mandatory">*</span> 
-                            <input formControlName="userName" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your  username">
+                            <input formControlName="username" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your  username">
                             <span 
                             class="error-msg"
                             *ngIf="
-                            signupForm.get('userName').invalid &&
-                            signupForm.get('userName').touched
+                            signupForm.get('username').invalid &&
+                            signupForm.get('username').touched
                             "
                             >This field is required</span
                           >
                            
                           </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Mobile Number</label>
-                            <input formControlName="phone" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your mobile number">
-                            <span
-                            class="error-msg"
-                            *ngIf="
-                            signupForm.get('phone').invalid &&
-                            signupForm.get('phone').touched
-                            "
-                            >Please Enter Correct Phone Number</span
-                          >
-                          </div>
+                         
                       <label for="exampleInputEmail1">Email address</label> <span class="mandatory">*</span> 
                       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                       <span

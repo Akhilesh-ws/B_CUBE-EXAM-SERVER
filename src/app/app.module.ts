@@ -16,6 +16,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './pages/home/home.component';
+import { BoardAdminComponent } from './profile/board-admin/board-admin.component';
+import { BoardUserComponent } from './profile/board-user/board-user.component';
+import { BoardModeratorComponent } from './profile/board-moderator/board-moderator.component';
+import { authInterceptorProviders } from './helper/login.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,9 @@ import { HomeComponent } from './pages/home/home.component';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    BoardAdminComponent,
+    BoardUserComponent,
+    BoardModeratorComponent,
 
   ],
   imports: [
@@ -39,7 +46,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatIconModule,
     
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
